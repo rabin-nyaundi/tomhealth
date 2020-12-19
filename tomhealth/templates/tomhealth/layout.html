@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+
+    <link rel="stylesheet" href="{% static 'tomhealth/css/main.css'%}">
+    <link rel="stylesheet" href="{% static 'tomhealth/css/product.css'%}">
+
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css">
+    <title>Website</title>
+</head>
+<body>
+
+    {% block navbar %}
+        <a href="#" class="scrollTop" id="scroll-top">
+            <i class='bx bxs-chevron-up scroll-up-icon'></i> <br>
+            <span style="color: #ffff">Top</span>
+        </a>
+        <a href="#" class="whatsapp-chat">
+            <i class='bx bxl-whatsapp bx-flip-horizontal contact-icons' style='color:#ffffff'></i>
+        </a>
+        <header class="top-header ">
+            <nav class="navbar">
+
+                <div class="logo">
+                    <a href="#" class="nav-logo">
+                        Health & <span>Wellness</span>
+                    </a>
+                </div>
+
+                <div class="menu-items" id="nav-menu">
+                    <ul class="nav-list">
+                    {% for category in categories %}
+                        <li class="list-item">
+                            <a href="{% url 'search' category.id%}" class="item">{{category.name}}</a>
+                        </li>
+                    {% endfor %}
+                    </ul>
+                </div>
+
+                <div class="menu-toggle" id="m-toggle">
+                    <i class='bx bx-menu'></i>
+                </div>
+            </nav>
+        </header>
+    {% endblock navbar %}
+
+    {% block content %}
+    
+    {% endblock content %}
+
+     {% block footer %}
+        <section class="footer-sec">
+            <div class="footer">
+                <div class="office">
+                    <h3>Contact us </h3>
+                    <ul class="list">
+                        <li class="list-item contact-div">
+                            <div style="background-color: #0a0000; color: #" class="icon">
+                                <i class='bx bxs-location-plus bx-flip-horizontal contact-icons' style='color:#f8f8f8; font-size:1.5rem;'></i>
+                            </div>                            
+                            <span>Nairobi</span>
+                        </li>
+                        <li class="list-item contact-div">
+                            <div style="background-color: #0a0000;" class="icon">
+                                <i class='bx bx-building-house bx-flip-horizontal contact-icons' style='color:#f8f8f8'></i>
+                            </div>
+                             <span>Nairobi, 1st Floor</span>
+                        </li>
+                        <li class="list-item contact-div">
+                           <div>
+                                <a href="">
+                                    <i class='bx bxs-phone bx-flip-horizontal contact-icons icon' style='color:#ffffff;background-color: #0a0000;'></i>
+                                    <span>+254789999999</span>
+                                </a>
+                           </div> 
+
+                        </li>
+                        <li class="list-item contact-div">
+                            <div>
+                                <a href="">
+                                    <i class='bx bxl-whatsapp bx-flip-horizontal contact-icons icon' style='color:#ffffff;background-color: #07971d;'></i>
+                                    <span>Whatsapp</span>
+                                </a>
+                            </div>
+                            
+                        </li>
+
+                        <li class="list-item contact-div">
+                            <div>
+                                <a href="">
+                                    <i class='bx bxl-facebook contact-icons icon' style='color:#ffffff;background-color: blue'></i>
+                                    <span>Facebook</span></a>
+                            </div>
+                            
+                        </li>
+                    </ul>
+                </div> 
+                <div class="contact">
+                    <h3 style="padding: 1rem">Quick Links</h3>
+                    <ul class="list">
+                        {% for category in categories %}
+                        <li class="list-item">
+                            <a style='color:#ffffff' href="{% url 'search' category.id%}" target="_blank" class="item-link quick-links">
+                                <i class='bx bxs-chevron-right'></i>
+                                {{category.name}}
+                            </a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="copy">
+            <div class="body-container body-grid">
+                <div class="copyright">
+                    &copy; 2020 | Health and wellness
+                </div>
+            </div>
+        </section>
+     {% endblock footer %}
+
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="{% static 'tomhealth/js/main.js' %}"></script>
+    <script src="{% static 'tomhealth/js/slide.js' %}"></script>
+</body>
+</html>

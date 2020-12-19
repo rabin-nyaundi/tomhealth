@@ -1,0 +1,60 @@
+{% extends 'tomhealth/layout.html' %}
+
+{% load static %}
+
+{% block content %}
+    <main class="main-content">
+        
+        <section class="home" id="home">
+            <div class="home-container body-container body-grid">
+                <div class="home-info">
+                    <h3 class="home-title">Look better</h3>
+                    <h4 class="home-subtitle">Feel <strong>Better</strong> Happy Living</h4>
+                    <a href="#" class="button">Contact us</a>
+                </div>
+                <div class="slides-show">
+                    <ul class="slides">
+                        <li class="li-item"><img class="slide-image" src="{% static 'tomhealth/img/image1.jpeg' %}" alt="ulcers"></li>
+                        <li class="li-item"><img class="slide-image" src="{% static 'tomhealth/img/jcp.jpeg' %}" alt="diabetes"></li>
+                        <li class="li-item"><img class="slide-image" src="{% static 'tomhealth/img/Wvp.jpeg' %}" alt="arthritis"></li>
+                        <li class="li-item"><img class="slide-image" src="{% static 'tomhealth/img/Mvp.jpeg' %}" alt="maca"></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="products-section" id="products"> 
+            <h2 class="section-subtitle">Products</h2>
+            <div class="product-container body-grid">
+               {% for product in products %}
+                <div class="product">
+                    <div class="image">
+                        <img src="{{ product.imageUrl}}" alt="" width="100%" height="400px">
+                        <!-- /assets/img/Wvp.jpeg -->
+                    </div>
+                    <div class="description">
+                        <p>
+                            {{product.name}}
+                        </p>
+                        <a href="{% url 'product' product.id %}">
+                            <button class="btn read-more">
+                                View Product
+                                <i class='bx bx-chevrons-right'></i>
+                            </button>
+                        </a>
+                        
+                    </div>
+                </div>
+                {% empty %}
+                <div class="body-contaner empty">
+                    <p><span>Ooops!</span> No products for the selected category</p>
+                </div>
+               {% endfor %}
+                
+
+            </div>
+        
+        </section>
+    </main>
+
+{% endblock content %}

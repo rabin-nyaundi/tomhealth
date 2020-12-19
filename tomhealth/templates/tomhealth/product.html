@@ -1,0 +1,28 @@
+{% extends 'tomhealth/layout.html' %}
+ 
+{% load static %}
+
+{% block content %}
+    <div class="container body-container body-grid">
+        <div class="ban">
+            <a href="{% url 'index'%}">Home</a> / {{products.product_category}} / {{products.name}}
+        </div>
+        <div class="product-pg">
+            <div class="product-image">
+                <img src="{{ products.imageUrl }}" alt="">
+            </div>
+            <div class="product-desc">
+                <h4>{{products.name}}</h4>
+                <p>{{products.description}}</p>
+                <div class="cont">
+                    <div class="phone">
+                        <a href="" class="btn">Call : 0700000000</a>
+                    </div>
+                    <div class="phone">
+                        <a href="" class="btn">Whatsapp</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
