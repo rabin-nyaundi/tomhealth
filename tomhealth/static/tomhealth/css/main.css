@@ -154,7 +154,7 @@ nav{
 }
 
 
-@media screen and (max-width: 767px){
+@media screen and (max-width: 540px){
     .menu-items{
         position: fixed;
         top: -100%;
