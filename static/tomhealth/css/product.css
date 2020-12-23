@@ -45,12 +45,12 @@
 }
 
 @media screen and (min-width: 767px){
-    .ban{
+    /* .ban{
         padding: 1rem;
         border-radius: .2rem;
         width: 100%;
         background-color: #cfcece;
-    }
+    } */
 }
 
 .phone .btn{
