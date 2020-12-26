@@ -14,6 +14,12 @@
             <div class="product-desc">
                 <h4>{{products.name}}</h4>
                 <p>{{products.description}}</p>
+                <h6 style="padding: 1rem;">Benefits of {{products.name}}</h6>
+                <ol style="list-style-type:circle!important">
+                    {% for prods in prod %}
+                    <li>{{prods}}.</li>
+                    {% endfor %}
+                </ol>
                 <div class="cont">
                     <div class="phone">
                         <a href="tel:+254700304978">
@@ -22,7 +28,7 @@
                         </a>
                     </div>
                     <div class="phone">
-                        <a href="https://wa.me/+254700304978?text=I'm%20interested%20in%20{{product.name}}%20Can%20I%20get%20one?">
+                        <a href="https://wa.me/+254700304978?text=I'm%20interested%20in%20{{products.name}}%20Can%20I%20get%20one?">
                             <i class='bx bxl-whatsapp bx-flip-horizontal contact-icons icon' style='color:#ffffff;background-color: #07971d;'></i>
                             Whatsapp</a>
                     </div>
